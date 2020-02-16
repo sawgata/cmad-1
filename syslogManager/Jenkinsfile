@@ -44,7 +44,7 @@ pipeline {
            echo 'Packaging users app with docker'
            script{
              docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
-                 def usersImage = docker.build("akrawat/syslogUI:v${env.BUILD_ID}", "syslogManager/")
+                 def usersImage = docker.build("akrawat/syslogui:v${env.BUILD_ID}", "syslogManager/")
                  usersImage.push()
                  usersImage.push("latest")
 
