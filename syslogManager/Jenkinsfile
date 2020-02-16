@@ -1,0 +1,63 @@
+pipeline {
+
+   agent none
+
+   stages {
+      stage('build') {
+         agent {
+          docker{
+                 image 'node:8.16-alpine'
+
+               }
+         }
+         when {
+            changeset "syslogManager/**"
+         }
+         steps {
+            echo 'compiling users service'
+            dir('syslogManager') {
+              sh 'npm install'
+            }
+         }
+      }
+      stage('test') {
+         agent {
+          docker{
+                 image 'node:8.16-alpine'
+               }
+         }
+         when {
+            changeset "syslogManager/**"
+         }
+         steps {
+            echo 'running unit tests on users service'
+            dir('syslogManager') {
+              sh 'npm install'
+              sh 'npm test'
+            }
+         }
+      }
+
+      stage('docker-package'){
+         agent any
+         steps{
+           echo 'Packaging users app with docker'
+           script{
+             docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
+                 def usersImage = docker.build("akrawat/syslogUI:v${env.BUILD_ID}", "syslogManager/")
+                 usersImage.push()
+                 usersImage.push("latest")
+
+             }
+            }
+         }
+      }
+   }
+
+
+   post{
+         always{
+             echo 'the job is complete'
+         }
+   }
+}
