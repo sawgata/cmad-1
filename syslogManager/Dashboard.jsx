@@ -1,8 +1,8 @@
 import React, {Component} from "react"
-import Header from "./Header.jsx"
-import LogSearch from "./LogSearch.jsx"
-import Notifications from "./Notifications.jsx"
-import Logresults from "./Logresults.jsx"
+import Header from "Header.jsx"
+import LogSearch from "LogSearch.jsx"
+import Notifications from "Notifications.jsx"
+import Logresults from "Logresults.jsx"
 
 class Dashboard extends Component{
    constructor(){
@@ -10,7 +10,7 @@ class Dashboard extends Component{
    }
    render(){
        return (
-           <div style={{"marginLeft":"20%","marginTop":"5%","marginRight":"20%","border": "1px solid gray","height":"80%","overflow":"auto"}}>             
+           <div style={{"marginLeft":"20%","marginTop":"5%","marginRight":"20%","border": "1px solid gray","height":"80%","overflow":"auto"}}>
              <br />
              <Header />
              <LogSearch />
