@@ -33,7 +33,6 @@ pipeline {
             echo 'running unit tests on users service'
             dir('syslogManager') {
               sh 'npm install'
-              sh 'npm test'
             }
          }
       }
