@@ -7,6 +7,7 @@ RUN npm install -g nodemon
 RUN npm config set registry https://registry.npmjs.org
 COPY package.json /app/package.json
 RUN npm install phantomjs-prebuilt
+RUN apt-get -qq update && apt-get -qq -y install bzip2
 RUN npm install \
  && npm ls \
  && npm cache clean --force \
