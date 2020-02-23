@@ -52,7 +52,7 @@ pipeline {
             echo 'packaging logsimulator app'
             dir('cmad-logsimulator') {
               sh 'mvn package -DskipTests'
-              archiveArtifacts artifacts: 'cmad-logsimulator/target/*.jar', fingerprint: true
+              archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
          }
       }
