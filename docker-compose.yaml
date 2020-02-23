@@ -13,7 +13,7 @@ services:
       - mysql
 
   mysql:
-    image: mysql:8.0
+    image: mysql:8.0.11
     environment:
       MYSQL_DATABASE: 'db'
       # So you don't have to use root, but you can if you like
