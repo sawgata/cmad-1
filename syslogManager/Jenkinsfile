@@ -6,7 +6,7 @@ pipeline {
       stage('build') {
          agent {
           docker{
-                 image 'node:12.14.1-alpine'
+                 image 'node:8.9.0'
 
                }
          }
@@ -23,7 +23,7 @@ pipeline {
       stage('test') {
          agent {
           docker{
-                 image 'node:12.14.1-alpine'
+                 image 'node:8.9.0'
                }
          }
          when {
