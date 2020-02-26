@@ -15,7 +15,7 @@ config = {
             loader: 'babel-loader',
 
             query: {
-               presets: ['env', 'react']
+               presets: ['es2015', 'react']
             }
          }
       ]
