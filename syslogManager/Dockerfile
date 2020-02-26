@@ -1,4 +1,4 @@
-FROM node:12.14.1-alpine
+FROM node:8.9.0
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -6,14 +6,12 @@ WORKDIR /app
 RUN npm install -g nodemon
 RUN npm config set registry https://registry.npmjs.org
 COPY package.json /app/package.json
-RUN npm install phantomjs-prebuilt
 RUN npm install \
  && npm ls \
  && npm cache clean --force \
  && mv /app/node_modules /node_modules
 COPY . /app
 
-ENV PORT 80
-EXPOSE 80
+EXPOSE 8081
 
-CMD ["node", "main.js"]
+CMD ["npm", "start"]
