@@ -39,6 +39,9 @@ pipeline {
 
       stage('docker-package'){
          agent any
+         when {
+            changeset "syslogManager/**"
+         }
          steps{
            echo 'Packaging users app with docker'
            script{

@@ -60,6 +60,10 @@ pipeline {
 
       stage('docker-package'){
          agent any
+         when {
+            changeset "cmad-logsimulator/**"
+            branch "master"
+         }
          steps{
            echo 'Packaging logsimulator app with docker'
            script{
