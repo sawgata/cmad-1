@@ -35,5 +35,4 @@ services:
   syslogui:
     image: akrawat/syslogui:latest
     ports:
-     - 0.0.0.0:8081:8081/tcp
-     - 0.0.0.0:8081:8081/udp
+     - 8081:8081
