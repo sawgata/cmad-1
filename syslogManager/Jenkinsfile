@@ -41,6 +41,7 @@ pipeline {
          agent any
          when {
             changeset "syslogManager/**"
+            branch "master"
          }
          steps{
            echo 'Packaging users app with docker'

@@ -21,13 +21,13 @@ public class SyslogSimController {
 	@Autowired
 	private SyslogService service;
 	@RequestMapping(value = "/start", method = RequestMethod.POST)
-	
+
 	public ResponseEntity<String> startSyslogGeneration(
 			@RequestBody SimulatorSettings settings
 			) {
 		System.out.println("Start Call receieved");
 		HttpHeaders headers = new HttpHeaders();
-		
+
 		headers.add("Access-Control-Allow-Origin", "*");
 		headers.add("Access-Control-Allow-Headers", "origin, content-type, accept, authorization");
 		headers.add("Access-Control-Allow-Credentials", "true");
@@ -38,14 +38,15 @@ public class SyslogSimController {
 	}
 	@RequestMapping(value = "/stop", method = RequestMethod.POST)
 	public ResponseEntity<String> stopSyslogGeneration() {
-		
+
 		HttpHeaders headers = new HttpHeaders();
-		
+
 		headers.add("Access-Control-Allow-Origin", "*");
 		headers.add("Access-Control-Allow-Headers", "origin, content-type, accept, authorization");
 		headers.add("Access-Control-Allow-Credentials", "true");
 		headers.add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
 		headers.add("Access-Control-Max-Age", "1209600");
+    service.stopSyslogGeneration();
 		return new ResponseEntity<String>("Stopped",headers, HttpStatus.OK);
 	}
 	@RequestMapping(value = "/syslog", method = RequestMethod.GET)
@@ -59,9 +60,9 @@ public class SyslogSimController {
 			//@QuerydslPredicate(root = Syslog.class) Predicate predicate,
             //Pageable pageable
             ) {
-		
+
 		HttpHeaders headers = new HttpHeaders();
-		
+
 		headers.add("Access-Control-Allow-Origin", "*");
 		headers.add("Access-Control-Allow-Headers", "origin, content-type, accept, authorization");
 		headers.add("Access-Control-Allow-Credentials", "true");
