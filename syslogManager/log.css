@@ -1,0 +1,26 @@
+.bodycolor{
+    border:0px solid gray;
+    margin:10%;
+    background-color:#80e5ff;
+}
+.headerstyle{
+    border:0px solid gray;
+    width:100%;
+    
+}
+.logsearchstyle{
+    border:0px solid gray;
+    width:100%;
+    height:100px
+}
+.notificationstyle{
+    border:0px solid gray;
+    width:100%;
+    height:100px
+}
+.logsearchresultsstyle{
+    border:0px solid gray;
+    width:100%;
+    height:250px;
+    overflow:scroll
+}
