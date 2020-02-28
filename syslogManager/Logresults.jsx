@@ -11,7 +11,7 @@ class Logresults extends Component{
         }
     }
     componentDidMount() {
-        fetch('http://logsimulator:8082/syslog').then(response => {
+        fetch('http://172.17.0.1:8082/syslog').then(response => {
            response.json().then(o => {
              this.setState({
                logs:o
