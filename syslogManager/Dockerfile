@@ -14,4 +14,5 @@ COPY . /app
 
 EXPOSE 8081
 
-CMD ["npm", "start"]
+#CMD ["npm", "start"]
+ENTRYPOINT ["npm", "start", "-H", "0.0.0.0"]
