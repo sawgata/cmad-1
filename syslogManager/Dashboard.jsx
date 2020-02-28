@@ -10,7 +10,7 @@ class Dashboard extends Component{
    }
    render(){
        return (
-           <div style={{"marginLeft":"20%","marginTop":"5%","marginRight":"20%","border": "1px solid gray","height":"80%","overflow":"auto"}}>
+           <div >             
              <br />
              <Header />
              <LogSearch />

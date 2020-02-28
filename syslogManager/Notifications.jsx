@@ -9,8 +9,8 @@ class Notifications extends Component{
     }
     render(){
         return(
-            <div>
-                 <span>Notification window </span>
+            <div className="notificationstyle">
+                 <span>Notifications: </span>
             </div>
         )
     }
