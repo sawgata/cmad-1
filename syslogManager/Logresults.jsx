@@ -11,15 +11,15 @@ class Logresults extends Component{
         }
     }
     componentDidMount() {
-        fetch('http://localhost:8080/syslog').then(response => {
+        fetch('http://logsimulator:8080/syslog').then(response => {
            response.json().then(o => {
              this.setState({
                logs:o
-             })             
+             })
            })
         });
      }
-    
+
     render(){
         console.log("this is logs from state");
         const alllogs = this.state.logs
@@ -35,11 +35,11 @@ class Logresults extends Component{
         console.log(this.state.logs)
         console.log(newlogs)
         return(
-            
+
     <div className="logsearchresultsstyle">
       <span>Source | Error Message | Error Type</span>
-         {newlogs}  
-      
+         {newlogs}
+
 
     </div>
 
