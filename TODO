@@ -1,0 +1,44 @@
+Backend
+  Logs Generator componentization
+  Logs receiver should always be listening in an infinte loop
+  Logs received from Logs Generator in backend using POST method and then deposited to MysqlDB
+  Logs request from UI to be served as a List of Syslogs
+
+  Quality of code:
+    Exception Handling
+    Unit tests
+
+
+Frontend
+  Fetch Logs from backed as a List of Syslogs:
+    Based on Timestamp(start time , end time)
+    Based on Pagination length(10,20)
+
+
+Krishna Mohan Koyya's Feedback:
+  Functionality:
+    Change of date time format and display in a table
+    Synchronize the UI elements to render the Query response
+
+  Microservices Integration
+    UI - syslogui container should be able to fetch syslogs from syslogsimulator container
+
+  Improve UI:
+    Table sorting and filtering arrows at the level of ui
+
+  Software Quality:
+    Componentize the code
+    Optimize the code
+    Add exception handling
+    Add UT's
+
+
+
+
+
+
+
+
+
+
+
