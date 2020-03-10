@@ -13,6 +13,8 @@ Frontend
   Fetch Logs from backed as a List of Syslogs:
     Based on Timestamp(start time , end time)
     Based on Pagination length(10,20)
+    Filters based on columns
+    pie chart
 
 
 Krishna Mohan Koyya's Feedback:
@@ -25,6 +27,7 @@ Krishna Mohan Koyya's Feedback:
 
   Improve UI:
     Table sorting and filtering arrows at the level of ui
+    Filters based on columns
 
   Software Quality:
     Componentize the code
